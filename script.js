@@ -1,3 +1,8 @@
+// ========================================
+// Global Language Variable 
+// ========================================
+let currentLang = 'en'; // Default language
+
 // Mobile Navigation Toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
@@ -102,6 +107,46 @@ const questions = [
         question: "What is the first phase of Ethical Hacking?",
         options: ["Scanning", "Reconnaissance", "Exploitation", "Reporting"],
         correct: 1
+    },
+    {
+        question: "In Splunk, which command is used to filter search results?",
+        options: ["search", "where", "filter", "select"],
+        correct: 1
+    },
+    {
+        question: "What Windows Event ID indicates a successful logon?",
+        options: ["4624", "4625", "4720", "5140"],
+        correct: 0
+    },
+    {
+        question: "Which tool monitors Windows system activity at kernel level?",
+        options: ["Process Monitor", "Sysmon", "Task Manager", "Event Viewer"],
+        correct: 1
+    },
+    {
+        question: "What is a 'SIEM' system primarily used for?",
+        options: ["Software development", "Security Information and Event Management", "Social media integration", "Server maintenance"],
+        correct: 1
+    },
+    {
+        question: "In Incident Response, what does 'IOC' stand for?",
+        options: ["Input Output Control", "Indicator of Compromise", "Internal Operations Center", "Internet Object Code"],
+        correct: 1
+    },
+    {
+        question: "Which PowerShell command retrieves Windows event logs?",
+        options: ["Get-EventLog", "Read-Event", "Show-Log", "View-Events"],
+        correct: 0
+    },
+    {
+        question: "What is the purpose of network segmentation in security?",
+        options: ["Speed up internet", "Limit lateral movement", "Reduce costs", "Increase bandwidth"],
+        correct: 1
+    },
+    {
+        question: "Which MITRE ATT&CK tactic involves establishing persistence?",
+        options: ["Initial Access", "Execution", "Persistence", "Discovery"],
+        correct: 2
     }
 ];
 
@@ -127,7 +172,11 @@ function loadQuestion() {
     
     const currentQuestion = questions[currentQuestionIndex];
     questionText.textContent = currentQuestion.question;
-    questionCounter.textContent = `Question ${currentQuestionIndex + 1}/${questions.length}`;
+    
+    // Use language-aware counter
+    const prefix = currentLang === 'de' ? 'Frage' : 'Question';
+    questionCounter.textContent = `${prefix} ${currentQuestionIndex + 1}/${questions.length}`;
+    
     optionsContainer.innerHTML = '';
     feedback.textContent = '';
     feedback.className = 'trivia-feedback';
@@ -150,12 +199,13 @@ function selectAnswer(selectedIndex) {
 
     if (selectedIndex === correctIndex) {
         score++;
-        scoreDisplay.textContent = `Score: ${score}`;
-        feedback.textContent = "Correct! 🎉";
+        const scorePrefix = currentLang === 'de' ? 'Punkte' : 'Score';
+        scoreDisplay.textContent = `${scorePrefix}: ${score}`;
+        feedback.textContent = currentLang === 'de' ? "Richtig! 🎉" : "Correct! 🎉";
         feedback.classList.add('text-success');
         buttons[selectedIndex].classList.add('correct');
     } else {
-        feedback.textContent = "Wrong Answer! ❌";
+        feedback.textContent = currentLang === 'de' ? "Falsche Antwort! ❌" : "Wrong Answer! ❌";
         feedback.classList.add('text-danger');
         buttons[selectedIndex].classList.add('incorrect');
         buttons[correctIndex].classList.add('correct');
@@ -176,7 +226,7 @@ if (nextBtn) {
 }
 
 function showResults() {
-    questionText.textContent = "Quiz Completed!";
+    questionText.textContent = currentLang === 'de' ? "Quiz abgeschlossen!" : "Quiz Completed!";
     optionsContainer.innerHTML = '';
     
     const resultDiv = document.createElement('div');
@@ -184,13 +234,18 @@ function showResults() {
     resultDiv.style.textAlign = "center";
     
     const scoreHeading = document.createElement('h3');
-    scoreHeading.textContent = `Your Score: ${score} / ${questions.length}`;
+    const scoreLabel = currentLang === 'de' ? 'Dein Ergebnis' : 'Your Score';
+    scoreHeading.textContent = `${scoreLabel}: ${score} / ${questions.length}`;
     
     const messageP = document.createElement('p');
-    messageP.textContent = score > (questions.length / 2) ? "Amazing! You're a pro!" : "Good effort! Keep learning.";
+    if (currentLang === 'de') {
+        messageP.textContent = score > (questions.length / 2) ? "Fantastisch! Du bist ein Profi!" : "Gute Leistung! Weiter lernen.";
+    } else {
+        messageP.textContent = score > (questions.length / 2) ? "Amazing! You're a pro!" : "Good effort! Keep learning.";
+    }
     
     const replayBtn = document.createElement('button');
-    replayBtn.textContent = "Play Again";
+    replayBtn.textContent = currentLang === 'de' ? "Nochmal spielen" : "Play Again";
     replayBtn.className = "btn btn-primary";
     replayBtn.style.marginTop = "20px";
     replayBtn.onclick = restartGame;
@@ -439,8 +494,6 @@ if (terminalInput) {
 // ========================================
 // Language Toggle Functionality
 // ========================================
-
-let currentLang = 'en'; // Default language
 
 const langToggle = document.getElementById('lang-toggle');
 

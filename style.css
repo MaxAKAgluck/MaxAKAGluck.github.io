@@ -286,6 +286,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .logo {
@@ -310,6 +311,35 @@ img {
 
 .nav-links a:hover {
     color: var(--primary-color);
+}
+
+.lang-toggle {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    margin-left: 20px;
+}
+
+.lang-toggle:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.lang-toggle i {
+    font-size: 1rem;
+}
+
+.lang-text {
+    font-family: 'Poppins', sans-serif;
 }
 
 .hamburger {
@@ -805,19 +835,73 @@ body.dark-theme .trivia-btn:hover {
 }
 
 /* Contact Section */
-.contact-wrapper {
+/* Contact Section - Centered Design */
+.contact-content-centered {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Large Social Icons for Contact */
+.social-icons-large {
     display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
+    gap: 30px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.contact-info {
-    flex: 1;
-    min-width: 300px;
+.social-icon-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 40px;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
+    text-decoration: none;
+    min-width: 150px;
 }
 
-/* Social Media Icons Styles */
+.social-icon-large i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+.social-icon-large span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: all 0.3s;
+}
+
+.social-icon-large:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon-large:hover i {
+    color: var(--white);
+}
+
+.social-icon-large:hover span {
+    color: var(--white);
+}
+
+.social-icon-large:hover {
+    background: var(--primary-color);
+}
+
+/* Small Social Icons (if needed elsewhere) */
 .social-icons {
     display: flex;
     gap: 20px;
@@ -841,38 +925,7 @@ body.dark-theme .trivia-btn:hover {
 .social-icon-item:hover {
     transform: translateY(-5px);
     background: var(--primary-color);
-    color: var(--white); /* Keep icon white on hover */
-}
-
-/* Contact Form Styling */
-.contact-form {
-    flex: 1.5;
-    min-width: 300px;
-    background: var(--white);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: background-color 0.3s;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1rem;
-    background-color: var(--white); /* Input bg match theme */
-    color: var(--text-dark);
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    border-color: var(--primary-color);
-    outline: none;
+    color: var(--white);
 }
 
 /* Footer */
@@ -912,6 +965,12 @@ footer {
         margin: 15px 0;
     }
 
+    .lang-toggle {
+        margin-left: 0;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
     .hamburger {
         display: block;
         color: var(--text-dark); /* Hamburger color in dark mode */
@@ -942,5 +1001,14 @@ footer {
 
     .social-icons {
         justify-content: center;
+    }
+
+    .social-icons-large {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .social-icon-large {
+        min-width: 100%;
     }
 }

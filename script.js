@@ -435,3 +435,73 @@ if (terminalInput) {
         }
     });
 }
+
+// ========================================
+// Language Toggle Functionality
+// ========================================
+
+let currentLang = 'en'; // Default language
+
+const langToggle = document.getElementById('lang-toggle');
+
+if (langToggle) {
+    langToggle.addEventListener('click', () => {
+        // Toggle language
+        currentLang = currentLang === 'en' ? 'de' : 'en';
+        
+        // Update button text
+        const langText = langToggle.querySelector('.lang-text');
+        langText.textContent = currentLang === 'en' ? 'DE' : 'EN';
+        
+        // Update all translatable elements
+        updateLanguage();
+    });
+}
+
+function updateLanguage() {
+    const elements = document.querySelectorAll('[data-en]');
+    
+    elements.forEach(element => {
+        const enText = element.getAttribute('data-en');
+        const deText = element.getAttribute('data-de');
+        
+        if (currentLang === 'de' && deText) {
+            // Special handling for elements with inner HTML (like terminal messages)
+            if (element.tagName === 'P' && element.parentElement.id === 'terminal-output') {
+                element.innerHTML = deText;
+            } else {
+                element.textContent = deText;
+            }
+        } else if (currentLang === 'en' && enText) {
+            // Special handling for elements with inner HTML (like terminal messages)
+            if (element.tagName === 'P' && element.parentElement.id === 'terminal-output') {
+                element.innerHTML = enText;
+            } else {
+                element.textContent = enText;
+            }
+        }
+    });
+    
+    // Update trivia counter and score with proper prefixes
+    const questionCounter = document.getElementById('question-counter');
+    const score = document.getElementById('score');
+    
+    if (questionCounter) {
+        const prefix = currentLang === 'de' ? 'Frage' : 'Question';
+        const match = questionCounter.textContent.match(/\d+\/\d+/);
+        if (match) {
+            questionCounter.textContent = `${prefix} ${match[0]}`;
+        }
+    }
+    
+    if (score) {
+        const prefix = currentLang === 'de' ? 'Punkte' : 'Score';
+        const match = score.textContent.match(/\d+/);
+        if (match) {
+            score.textContent = `${prefix}: ${match[0]}`;
+        }
+    }
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = currentLang;
+}

@@ -16,6 +16,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    
 </head>
 <body>
 
@@ -25,15 +31,19 @@
             <a href="#" class="logo">Max AKA Gluck</a>
             <nav class="nav-links" id="nav-links">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#journey">Journey</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#fun-zone">Fun Zone</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" data-en="Home" data-de="Startseite">Home</a></li>
+                    <li><a href="#about" data-en="About" data-de="Über mich">About</a></li>
+                    <li><a href="#journey" data-en="Journey" data-de="Mein Weg">Journey</a></li>
+                    <li><a href="#projects" data-en="Projects" data-de="Projekte">Projects</a></li>
+                    <li><a href="#certificates" data-en="Certificates" data-de="Zertifikate">Certificates</a></li>
+                    <li><a href="#fun-zone" data-en="Fun Zone" data-de="Fun Zone">Fun Zone</a></li>
+                    <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
                 </ul>
             </nav>
+            <button class="lang-toggle" id="lang-toggle" title="Switch language / Sprache wechseln">
+                <i class="fas fa-globe"></i>
+                <span class="lang-text">DE</span>
+            </button>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -44,18 +54,15 @@
     <section id="home" class="hero-section">
         <div class="container hero-content">
             <div class="hero-text">
-                <span class="greeting">Hello, I am</span>
-                <!-- [PLACEHOLDER]: Replace with your name -->
+                <span class="greeting" data-en="Hello, I am" data-de="Hallo, ich bin">Hello, I am</span>
                 <h1>Maksim</h1> 
-                <!-- [PLACEHOLDER]: Updated title for beginner/student -->
-                <h2 class="subtitle">Aspiring Cybersecurity Analyst</h2> 
-                <p>
-                    <!-- [PLACEHOLDER]: Brief intro -->
+                <h2 class="subtitle" data-en="Aspiring Cybersecurity Analyst" data-de="Angehender Cybersecurity Analyst">Aspiring Cybersecurity Analyst</h2> 
+                <p data-en="Passionate about Blue Team security and networking. Currently honing my skills through CTFs, home labs, and continuous learning." data-de="Begeistert von Blue Team Security und Netzwerksicherheit. Verfeinere derzeit meine Fähigkeiten durch CTFs, Home Labs und kontinuierliches Lernen.">
                     Passionate about Blue Team security and networking. Currently honing my skills through CTFs, home labs, and continuous learning.
                 </p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Contact Me</a>
-                    <a href="#" class="btn btn-outline">Download CV</a> 
+                    <a href="#contact" class="btn btn-primary" data-en="Contact Me" data-de="Kontaktiere mich">Contact Me</a>
+                    <a href="#" class="btn btn-outline" data-en="Download CV" data-de="Lebenslauf herunterladen">Download CV</a> 
                 </div>
             </div>
             <div class="hero-image">
@@ -69,19 +76,19 @@
         <div class="container stats-grid">
             <div class="stat-item">
                 <h3>100+</h3>
-                <p>Hours on TryHackMe</p>
+                <p data-en="Hours on TryHackMe" data-de="Stunden auf TryHackMe">Hours on TryHackMe</p>
             </div>
             <div class="stat-item">
                 <h3>100+</h3>
-                <p>CTF Rooms Solved</p>
+                <p data-en="CTF Rooms Solved" data-de="CTF Räume gelöst">CTF Rooms Solved</p>
             </div>
             <div class="stat-item">
                 <h3>5</h3>
-                <p>Certifications</p>
+                <p data-en="Certifications" data-de="Zertifikate">Certifications</p>
             </div>
             <div class="stat-item">
                 <h3>24/7</h3>
-                <p>Learning Mode</p>
+                <p data-en="Learning Mode" data-de="Lernmodus">Learning Mode</p>
             </div>
         </div>
     </section>
@@ -89,16 +96,14 @@
     <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-en="About Me" data-de="Über mich">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Trying to learn how to make the world digitally safer.</h3>
-                    <p>
-                        <!-- [PLACEHOLDER]: Bio -->
+                    <h3 data-en="Trying to learn how to make the world digitally safer." data-de="Ich lerne, wie man die Welt digital sicherer macht.">Trying to learn how to make the world digitally safer.</h3>
+                    <p data-en="Motivated and ambitious AI and Robotics student at the University of Klagenfurt with a strong interest in cybersecurity (offensive & defensive). Passionate about Blue Team security, networking, and cybersecurity best practices. Seeking an internship or helpdesk role to gain hands-on experience in cybersecurity. Actively improving skills through CTFs, lab challenges, and certifications." data-de="Motivierter und ambitionierter KI- und Robotik-Student an der Universität Klagenfurt mit starkem Interesse an Cybersecurity (offensiv & defensiv). Begeistert von Blue Team Security, Netzwerksicherheit und Cybersecurity Best Practices. Auf der Suche nach einem Praktikum oder einer Helpdesk-Position, um praktische Erfahrung in der Cybersecurity zu sammeln. Verbessere aktiv meine Fähigkeiten durch CTFs, Lab-Challenges und Zertifizierungen.">
                         Motivated and ambitious AI and Robotics student at the University of Klagenfurt with a strong interest in cybersecurity (offensive & defensive). Passionate about Blue Team security, networking, and cybersecurity best practices. Seeking an internship or helpdesk role to gain hands-on experience in cybersecurity. Actively improving skills through CTFs, lab challenges, and certifications.
                     </p>
-                    <p>
-                        <!-- [PLACEHOLDER]: Learning focus -->
+                    <p data-en="I spend my free time learning, setting up virtual labs, and solving challenges on various platforms. I am eager to apply my knowledge in a real-world SOC or Analyst role." data-de="Ich verbringe meine Freizeit mit Lernen, dem Aufbau virtueller Labs und dem Lösen von Challenges auf verschiedenen Plattformen. Ich bin bestrebt, mein Wissen in einer realen SOC- oder Analyst-Position anzuwenden.">
                         I spend my free time learning, setting up virtual labs, and solving challenges on various platforms. I am eager to apply my knowledge in a real-world SOC or Analyst role.
                     </p>
                 </div>
@@ -109,12 +114,12 @@
     <!-- Skills Section -->
     <section id="skills" class="section skills-section bg-light">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title" data-en="Technical Skills" data-de="Technische Fähigkeiten">Technical Skills</h2>
             <div class="skills-grid">
                 
                 <div class="skill-card">
                     <div class="skill-info">
-                        <h4>Log analysis through SIEM tools (Splunk, Kibana)</h4>
+                        <h4 data-en="Log analysis through SIEM tools (Splunk, Kibana)" data-de="Log-Analyse mit SIEM-Tools (Splunk, Kibana)">Log analysis through SIEM tools (Splunk, Kibana)</h4>
                         <span>70%</span>
                     </div>
                     <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
@@ -122,7 +127,7 @@
 
                 <div class="skill-card">
                     <div class="skill-info">
-                        <h4>Linux Fundamentals and CLI</h4>
+                        <h4 data-en="Linux Fundamentals and CLI" data-de="Linux-Grundlagen und CLI">Linux Fundamentals and CLI</h4>
                         <span>85%</span>
                     </div>
                     <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
@@ -130,7 +135,7 @@
 
                 <div class="skill-card">
                     <div class="skill-info">
-                        <h4>Windows Processes and Powershell scripting</h4>
+                        <h4 data-en="Windows Processes and Powershell scripting" data-de="Windows-Prozesse und PowerShell-Skripting">Windows Processes and Powershell scripting</h4>
                         <span>75%</span>
                     </div>
                     <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
@@ -138,14 +143,14 @@
 
                 <div class="skill-card">
                     <div class="skill-info">
-                        <h4>Sysmon and Windows Event Logs Analysis</h4>
+                        <h4 data-en="Sysmon and Windows Event Logs Analysis" data-de="Sysmon- und Windows-Ereignisprotokolle-Analyse">Sysmon and Windows Event Logs Analysis</h4>
                         <span>70%</span>
                     </div>
                     <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-info">
-                        <h4>Python Scripting</h4>
+                        <h4 data-en="Python Scripting" data-de="Python-Skripting">Python Scripting</h4>
                         <span>75%</span>
                     </div>
                     <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
@@ -153,7 +158,7 @@
 
                 <div class="skill-card">
                     <div class="skill-info">
-                        <h4>OWASP Top 10 and Security Frameworks (MITRE ATT&CK, Cyber Kill Chain, etc.)</h4>
+                        <h4 data-en="OWASP Top 10 and Security Frameworks (MITRE ATT&CK, Cyber Kill Chain, etc.)" data-de="OWASP Top 10 und Security Frameworks (MITRE ATT&CK, Cyber Kill Chain, etc.)">OWASP Top 10 and Security Frameworks (MITRE ATT&CK, Cyber Kill Chain, etc.)</h4>
                         <span>65%</span>
                     </div>
                     <div class="progress-bar"><div class="progress" style="width: 65%"></div></div>
@@ -167,37 +172,37 @@
     <!-- Journey / Education Section (Replaced Job History) -->
     <section id="journey" class="section experience-section">
         <div class="container">
-            <h2 class="section-title">My Journey</h2>
+            <h2 class="section-title" data-en="My Journey" data-de="Mein Weg">My Journey</h2>
             <div class="timeline-grid">
                 
                 <!-- Learning Path -->
                 <div class="timeline-column">
-                    <h3 class="column-title"><i class="fas fa-road"></i> Learning Path</h3>
+                    <h3 class="column-title"><i class="fas fa-road"></i> <span data-en="Learning Path" data-de="Lernpfad">Learning Path</span></h3>
                     
                     <div class="timeline-item">
-                        <span class="date">Present</span>
-                        <h4>Self-Paced Learning</h4>
+                        <span class="date" data-en="Present" data-de="Aktuell">Present</span>
+                        <h4 data-en="Self-Paced Learning" data-de="Selbstgesteuertes Lernen">Self-Paced Learning</h4>
                         <span class="company">TryHackMe / HackTheBox</span>
-                        <p>Actively ranking up in CTFs. Focusing on Privilege Escalation and Active Directory basics.</p>
+                        <p data-en="Actively ranking up in CTFs. Focusing on Privilege Escalation and Active Directory basics." data-de="Aktiv in CTFs aufsteigend. Fokus auf Privilege Escalation und Active Directory Grundlagen.">Actively ranking up in CTFs. Focusing on Privilege Escalation and Active Directory basics.</p>
                     </div>
 
                     <div class="timeline-item">
                         <span class="date">2023</span>
-                        <h4>Cybersecurity Bootcamp</h4>
+                        <h4 data-en="Cybersecurity Bootcamp" data-de="Cybersecurity Bootcamp">Cybersecurity Bootcamp</h4>
                         <span class="company">Udemy / Coursera</span>
-                        <p>Completed comprehensive course on Network Security and Ethical Hacking fundamentals.</p>
+                        <p data-en="Completed comprehensive course on Network Security and Ethical Hacking fundamentals." data-de="Umfassender Kurs über Netzwerksicherheit und Ethical Hacking Grundlagen abgeschlossen.">Completed comprehensive course on Network Security and Ethical Hacking fundamentals.</p>
                     </div>
                 </div>
 
                 <!-- Education -->
                 <div class="timeline-column">
-                    <h3 class="column-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <h3 class="column-title"><i class="fas fa-graduation-cap"></i> <span data-en="Education" data-de="Ausbildung">Education</span></h3>
                     
                     <div class="timeline-item">
                         <span class="date">2024 - 2027</span>
-                        <h4>Bachelor Robotics and AI</h4>
-                        <span class="company">University of Klagenfurt</span>
-                        <p>Relevant Coursework: Operating Systems & Computer Networks, Introduction to AI, Machine Learning.</p>
+                        <h4 data-en="Bachelor Robotics and AI" data-de="Bachelor Robotik und KI">Bachelor Robotics and AI</h4>
+                        <span class="company" data-en="University of Klagenfurt" data-de="Universität Klagenfurt">University of Klagenfurt</span>
+                        <p data-en="Relevant Coursework: Operating Systems & Computer Networks, Introduction to AI, Machine Learning." data-de="Relevante Kurse: Betriebssysteme & Computernetzwerke, Einführung in KI, Machine Learning.">Relevant Coursework: Operating Systems & Computer Networks, Introduction to AI, Machine Learning.</p>
                     </div>
                 </div>
 
@@ -208,55 +213,55 @@
     <!-- Projects Section (New) -->
     <section id="projects" class="section projects-section bg-light">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Hands-on projects demonstrating practical skills.</p>
+            <h2 class="section-title" data-en="Projects" data-de="Projekte">Projects</h2>
+            <p class="section-subtitle" data-en="Hands-on projects demonstrating practical skills." data-de="Praxisnahe Projekte, die praktische Fähigkeiten demonstrieren.">Hands-on projects demonstrating practical skills.</p>
             
             <div class="projects-grid">
-                <!-- [PLACEHOLDER]: Project 1 -->
+                <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
                          <img src="assets/bt-quickcheck.png" alt="Project 1">
                     </div>
                     <div class="project-content">
                         <h3>BT-QuickCheck</h3>
-                        <p>A fast, no-hassle Linux one-liner to baseline a host from a blue team perspective</p>
+                        <p data-en="A fast, no-hassle Linux one-liner to baseline a host from a blue team perspective" data-de="Ein schneller, unkomplizierter Linux-Einzeiler zum Basislinie eines Hosts aus Blue-Team-Perspektive">A fast, no-hassle Linux one-liner to baseline a host from a blue team perspective</p>
                         <div class="project-tags">
                             <span>Python</span>
-                            <span>Linux Security</span>
+                            <span data-en="Linux Security" data-de="Linux-Sicherheit">Linux Security</span>
                         </div>
-                        <a href="https://github.com/MaxAKAgluck/bt-quickcheck" class="btn btn-outline btn-sm">View Code</a>
+                        <a href="https://github.com/MaxAKAgluck/bt-quickcheck" class="btn btn-outline btn-sm" data-en="View Code" data-de="Code ansehen">View Code</a>
                     </div>
                 </div>
 
-                <!-- [PLACEHOLDER]: Project 2 -->
+                <!-- Project 2 -->
                 <div class="project-card">
                      <div class="project-image">
                          <img src="assets/BOTSv1.png" alt="Project 2">
                     </div>
                     <div class="project-content">
                         <h3>BOTSv1 Writeup</h3>
-                        <p>Writeup of the BOTSv1 CTF challenge using Splunk</p>
+                        <p data-en="Writeup of the BOTSv1 CTF challenge using Splunk" data-de="Writeup der BOTSv1 CTF-Challenge mit Splunk">Writeup of the BOTSv1 CTF challenge using Splunk</p>
                         <div class="project-tags">
                             <span>Splunk</span>
-                            <span>Log analysis</span>
-                            <span>Query Language</span>
+                            <span data-en="Log analysis" data-de="Log-Analyse">Log analysis</span>
+                            <span data-en="Query Language" data-de="Query-Sprache">Query Language</span>
                         </div>
-                        <a href="https://github.com/MaxAKAgluck/BOTSv1_Lab" class="btn btn-outline btn-sm">View Report</a>
+                        <a href="https://github.com/MaxAKAgluck/BOTSv1_Lab" class="btn btn-outline btn-sm" data-en="View Report" data-de="Bericht ansehen">View Report</a>
                     </div>
                 </div>
-                 <!-- [PLACEHOLDER]: Project 3 -->
+                 <!-- Project 3 -->
                 <div class="project-card">
                      <div class="project-image">
                          <img src="https://placehold.co/600x400/e0e0e0/808080?text=Project+Image" alt="Project 3">
                     </div>
                     <div class="project-content">
-                        <h3>Vulnerable Web App Lab</h3>
-                        <p>Set up a local environment with DVWA to practice SQL Injection and XSS attacks.</p>
+                        <h3 data-en="Vulnerable Web App Lab" data-de="Verwundbare Web-App Lab">Vulnerable Web App Lab</h3>
+                        <p data-en="Set up a local environment with DVWA to practice SQL Injection and XSS attacks." data-de="Lokale Umgebung mit DVWA eingerichtet, um SQL Injection und XSS-Angriffe zu üben.">Set up a local environment with DVWA to practice SQL Injection and XSS attacks.</p>
                         <div class="project-tags">
                             <span>Docker</span>
-                            <span>Web Security</span>
+                            <span data-en="Web Security" data-de="Web-Sicherheit">Web Security</span>
                         </div>
-                         <a href="#" class="btn btn-outline btn-sm">View Setup</a>
+                         <a href="#" class="btn btn-outline btn-sm" data-en="View Setup" data-de="Setup ansehen">View Setup</a>
                     </div>
                 </div>
             </div>
@@ -266,44 +271,44 @@
     <!-- Certificates Section (Replaced Services) -->
     <section id="certificates" class="section certificates-section">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <p class="section-subtitle">Credentials earned during my learning journey.</p>
+            <h2 class="section-title" data-en="Certifications" data-de="Zertifikate">Certifications</h2>
+            <p class="section-subtitle" data-en="Credentials earned during my learning journey." data-de="Zertifikate, die ich auf meinem Lernweg erworben habe.">Credentials earned during my learning journey.</p>
             
             <div class="cert-grid">
                 <!-- Cert 1: Junior Cybersecurity Analyst -->
                 <div class="cert-card">
                     <div class="cert-icon"><img src="assets/Cisco_Junior_Security_Analyst.png" alt="Cert 1"></div>
-                    <h3>Junior Cybersecurity Analyst</h3>
+                    <h3 data-en="Junior Cybersecurity Analyst" data-de="Junior Cybersecurity Analyst">Junior Cybersecurity Analyst</h3>
                     <span class="issuer">Cisco</span>
-                    <p>Validated skills in incident response and threat analysis.</p>
-                    <a href="https://www.credly.com/badges/3ec9e5e4-2da2-47f2-9fb4-9ecd4e8a0d6e/public_url" target="_blank" rel="noopener noreferrer" class="cert-link">View Credential</a>
+                    <p data-en="Validated skills in incident response and threat analysis." data-de="Validierte Fähigkeiten in Incident Response und Bedrohungsanalyse.">Validated skills in incident response and threat analysis.</p>
+                    <a href="https://www.credly.com/badges/3ec9e5e4-2da2-47f2-9fb4-9ecd4e8a0d6e/public_url" target="_blank" rel="noopener noreferrer" class="cert-link" data-en="View Credential" data-de="Zertifikat ansehen">View Credential</a>
                 </div>
 
                 <!-- Cert 2: Network Addressing -->
                 <div class="cert-card">
                     <div class="cert-icon"><img src="assets/Cisco_Network_Addressing.png" alt="Cert 2"></div>
-                    <h3>Network Addressing and Basic Troubleshooting</h3>
+                    <h3 data-en="Network Addressing and Basic Troubleshooting" data-de="Netzwerkadressierung und grundlegende Fehlerbehebung">Network Addressing and Basic Troubleshooting</h3>
                     <span class="issuer">Cisco</span>
-                    <p>Competency in IP addressing, subnetting, and network protocols.</p>
-                    <a href="https://www.credly.com/badges/5b436c8a-bef1-455e-8da1-e0465ad6105b/public_url" target="_blank" rel="noopener noreferrer" class="cert-link">View Credential</a>
+                    <p data-en="Competency in IP addressing, subnetting, and network protocols." data-de="Kompetenz in IP-Adressierung, Subnetting und Netzwerkprotokollen.">Competency in IP addressing, subnetting, and network protocols.</p>
+                    <a href="https://www.credly.com/badges/5b436c8a-bef1-455e-8da1-e0465ad6105b/public_url" target="_blank" rel="noopener noreferrer" class="cert-link" data-en="View Credential" data-de="Zertifikat ansehen">View Credential</a>
                 </div>
 
                 <!-- Cert 3: SOC Analyst HTB -->
                 <div class="cert-card">
                     <div class="cert-icon"><img src="assets/HTB_SOC.png" alt="Cert 3"></div>
-                    <h3>SOC Analyst</h3>
+                    <h3 data-en="SOC Analyst" data-de="SOC Analyst">SOC Analyst</h3>
                     <span class="issuer">Hack The Box</span>
-                    <p>Hands-on experience with log analysis and SIEM tools.</p>
-                    <a href="https://academy.hackthebox.com/achievement/244347/path/390" target="_blank" rel="noopener noreferrer" class="cert-link">View Credential</a>
+                    <p data-en="Hands-on experience with log analysis and SIEM tools." data-de="Praxiserfahrung mit Log-Analyse und SIEM-Tools.">Hands-on experience with log analysis and SIEM tools.</p>
+                    <a href="https://academy.hackthebox.com/achievement/244347/path/390" target="_blank" rel="noopener noreferrer" class="cert-link" data-en="View Credential" data-de="Zertifikat ansehen">View Credential</a>
                 </div>
 
                  <!-- Cert 4: TryHackMe SOC -->
                  <div class="cert-card">
                     <div class="cert-icon"><img src="assets/TryHackMe_SOC_L1.png" alt="Cert 4"></div>
-                    <h3>SOC Level 1</h3>
+                    <h3 data-en="SOC Level 1" data-de="SOC Level 1">SOC Level 1</h3>
                     <span class="issuer">TryHackMe</span>
-                    <p>Fundamental knowledge of cybersecurity operations.</p>
-                    <a href="https://tryhackme.com/certificate/THM-Q73RW7IBGM" target="_blank" rel="noopener noreferrer" class="cert-link">View Credential</a>
+                    <p data-en="Fundamental knowledge of cybersecurity operations." data-de="Grundlegendes Wissen über Cybersecurity-Operationen.">Fundamental knowledge of cybersecurity operations.</p>
+                    <a href="https://tryhackme.com/certificate/THM-Q73RW7IBGM" target="_blank" rel="noopener noreferrer" class="cert-link" data-en="View Credential" data-de="Zertifikat ansehen">View Credential</a>
                 </div>
             </div>
         </div>
@@ -313,27 +318,27 @@
     <section id="fun-zone" class="section fun-section bg-light">
         <div class="container">
             <h2 class="section-title">Fun Zone</h2>
-            <p class="section-subtitle">Cyber Trivia and Cyber Terminal</p>
+            <p class="section-subtitle" data-en="Cyber Trivia and Cyber Terminal" data-de="Cyber-Quiz und Cyber-Terminal">Cyber Trivia and Cyber Terminal</p>
             
             <div class="fun-grid" style="display:block; max-width:800px; margin:0 auto;">
                 <!-- Trivia Game -->
                 <div class="fun-card" style="margin-bottom: 40px;">
-                    <h3>Cyber Trivia</h3>
-                    <p>Test your knowledge with random security questions.</p>
+                    <h3 data-en="Cyber Trivia" data-de="Cyber-Quiz">Cyber Trivia</h3>
+                    <p data-en="Test your knowledge with random security questions." data-de="Teste dein Wissen mit zufälligen Sicherheitsfragen.">Test your knowledge with random security questions.</p>
                     
                     <div id="trivia-card" class="trivia-card">
                         <div class="trivia-header">
-                            <span id="question-counter">Question 1/5</span>
-                            <span id="score">Score: 0</span>
+                            <span id="question-counter" data-en-prefix="Question" data-de-prefix="Frage">Question 1/5</span>
+                            <span id="score" data-en-prefix="Score" data-de-prefix="Punkte">Score: 0</span>
                         </div>
                         <div class="trivia-body">
-                            <h3 id="question-text">Loading question...</h3>
+                            <h3 id="question-text" data-en="Loading question..." data-de="Lade Frage...">Loading question...</h3>
                             <div class="options-grid" id="options-container">
                                 <!-- Options will be injected by JS -->
                             </div>
                         </div>
                         <div id="feedback" class="trivia-feedback"></div>
-                        <button id="next-btn" class="btn btn-primary" style="display: none;">Next Question</button>
+                        <button id="next-btn" class="btn btn-primary" style="display: none;" data-en="Next Question" data-de="Nächste Frage">Next Question</button>
                     </div>
                 </div>
 
@@ -347,9 +352,9 @@
                     </div>
                     <div class="terminal-body" id="terminal-body">
                         <div class="terminal-output" id="terminal-output">
-                            <p>Welcome to CyberTerminal v1.0</p>
-                            <p>Type <span style="color: #00aaff;">'help'</span> to see available commands.</p>
-                            <p>Try <span style="color: #00aaff;">'theme dark'</span> to join the dark side.</p>
+                            <p data-en="Welcome to CyberTerminal v1.0" data-de="Willkommen zu CyberTerminal v1.0">Welcome to CyberTerminal v1.0</p>
+                            <p data-en="Type <span style='color: #00aaff;'>'help'</span> to see available commands." data-de="Tippe <span style='color: #00aaff;'>'help'</span>, um verfügbare Befehle zu sehen.">Type <span style="color: #00aaff;">'help'</span> to see available commands.</p>
+                            <p data-en="Try <span style='color: #00aaff;'>'theme dark'</span> to join the dark side." data-de="Versuche <span style='color: #00aaff;'>'theme dark'</span>, um zur dunklen Seite zu wechseln.">Try <span style="color: #00aaff;">'theme dark'</span> to join the dark side.</p>
                         </div>
                     </div>
                     <div class="terminal-input-area" style="padding: 0 20px 20px;">
@@ -364,45 +369,32 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-wrapper">
-                
-                <div class="contact-info">
-                    <p style="margin-bottom: 20px; color: var(--text-light);">
-                        I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
-                    </p>
-                    <div class="social-icons">
-                        <a href="mailto:m.poksevatkin@gmail.com" class="social-icon-item" title="Email Me">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/maksim-poksevatkin-/" target="_blank" rel="noopener noreferrer" class="social-icon-item" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/MaxAKAgluck" target="_blank" rel="noopener noreferrer" class="social-icon-item" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
+            <h2 class="section-title" data-en="Let's Connect" data-de="Kontakt">Let's Connect</h2>
+            <div class="contact-content-centered">
+                <p class="contact-description" data-en="I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out through any of the platforms below!" data-de="Ich bin immer offen für Diskussionen über neue Projekte, kreative Ideen oder Möglichkeiten. Kontaktiere mich gerne über eine der unten stehenden Plattformen!">
+                    I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out through any of the platforms below!
+                </p>
+                <div class="social-icons-large">
+                    <a href="mailto:m.poksevatkin@gmail.com" class="social-icon-large" title="Email Me" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                        <span data-en="Email" data-de="E-Mail">Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/maksim-poksevatkin-/" target="_blank" rel="noopener noreferrer" class="social-icon-large" title="LinkedIn Profile" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/MaxAKAgluck" target="_blank" rel="noopener noreferrer" class="social-icon-large" title="GitHub Profile" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
                 </div>
-
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="contact-name" placeholder="Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="contact-email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="contact-message" rows="5" placeholder="Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </form>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Maksim Poksevatkin. Built with Cursor and patience.</p>
+            <p data-en="&copy; 2025 Maksim Poksevatkin. Built with Cursor and patience." data-de="&copy; 2025 Maksim Poksevatkin. Erstellt mit Cursor und Geduld.">&copy; 2025 Maksim Poksevatkin. Built with Cursor and patience.</p>
         </div>
     </footer>
 

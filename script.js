@@ -242,11 +242,11 @@ const terminalBody = document.getElementById('terminal-body');
 const resourceLinks = [
     { name: "OWASP Top 10", url: "https://owasp.org/www-project-top-ten/", desc: "Web Vulnerabilities" },
     { name: "OWASP Cheat Sheet Series", url: "https://cheatsheetseries.owasp.org/", desc: "Security Best Practices" },
-    { name: "Splunk Security Cheat Sheets", url: "https://www.splunk.com/en_us/blog/security/splunk-security-cheat-sheets.html", desc: "SIEM Operations" },
+    { name: "Splunk Security Cheat Sheets", url: "https://www.stationx.net/splunk-cheat-sheet/", desc: "Useful Splunk commands cheatsheet" },
     { name: "CyberChef", url: "https://gchq.github.io/CyberChef/", desc: "Cyber Swiss Army Knife" },
     { name: "HackTricks", url: "https://book.hacktricks.xyz/", desc: "Pentesting Wiki" },
     { name: "GTFOBins", url: "https://gtfobins.github.io/", desc: "Unix Binaries Exploitation" },
-    { name: "Metasploit Unleashed", url: "https://www.offensive-security.com/metasploit-unleashed/", desc: "Metasploit Framework Guide" },
+    { name: "Metasploit Unleashed", url: "https://www.offsec.com/metasploit-unleashed/", desc: "In-depth Metasploit guide" },
     { name: "MITRE ATT&CK", url: "https://attack.mitre.org/", desc: "Adversary Tactics & Techniques" }
 ];
 
@@ -301,10 +301,10 @@ const commands = {
         action: () => {
             const arts = [
                 // Metasploit-inspired ASCII Art
-"       =[ metasploit v6.3.0-dev                          ]\n" +
-"+ -- --=[ 2296 exploits - 1202 auxiliary - 410 post       ]\n" +
-"+ -- --=[ 951 payloads - 45 encoders - 11 nops            ]\n" +
-"+ -- --=[ 9 evasion                                       ]",
+"        [ metasploit v6.3.0-dev                           ]\n" +
+"        [ 2296 exploits - 1202 auxiliary - 410 post       ]\n" +
+"        [ 951 payloads - 45 encoders - 11 nops            ]\n" +
+"        [ 9 evasion                                       ]",
 
 "    ██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗ \n" +
 "    ██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗\n" +
@@ -313,16 +313,6 @@ const commands = {
 "    ██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║\n" +
 "    ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝",
 
-"    _______________\n" +
-"   /               \\\n" +
-"  /  O     ___     \\\n" +
-" |     .-\"\"\"\"\"\"\"-. |\n" +
-" |    / -======-  \\|\n" +
-" |   |  /\\     /\\  ||\n" +
-"  \\  |  \\_/   \\_/  |/\n" +
-"   \\ \\    (_)    / /\n" +
-"    \\_\\.  ===  ./  /\n" +
-"      `-.....-\"",
 
 "       .---.        .-----------\n" +
 "      /     \\  __  /    ------\n" +
@@ -343,7 +333,7 @@ const commands = {
 "       //..\\\\      //..\\\\      \n" +
 "      // ..\\ \\    // ..\\ \\\n" +
 "     //  .  \\ \\  //  .  \\ \\\n" +
-"    //__  __\\ \\/__  __\\ \\\n" +
+"    //__  __\\ \\  /__  __\\ \\\n" +
 "   =  = ==  =  = ==  = =\n" +
 "     DIGITAL FORTRESS"
             ];

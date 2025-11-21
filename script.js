@@ -434,10 +434,10 @@ const commands = {
                 document.body.appendChild(poweroffScreen);
             }
             
-            // Trigger shutdown screen after 1 second
+            // Trigger shutdown screen after 1.5 second
             setTimeout(() => {
                 poweroffScreen.classList.add('active');
-            }, 1000);
+            }, 1500);
             
             // Auto-remove the poweroff screen after 3 seconds
             setTimeout(() => {
@@ -558,3 +558,66 @@ function updateLanguage() {
     // Update HTML lang attribute
     document.documentElement.lang = currentLang;
 }
+
+// ========================================
+// Typing Animation Effect for Hero Subtitle
+// ========================================
+
+function initTypingAnimation() {
+    const subtitleEl = document.querySelector('.subtitle.typing');
+    if (!subtitleEl) return;
+    
+    const texts = {
+        en: "Aspiring Cybersecurity Analyst",
+        de: "Angehender Cybersecurity Analyst"
+    };
+    
+    let charIndex = 0;
+    let isDeleting = false;
+    let currentText = texts[currentLang];
+    
+    function type() {
+        const fullText = texts[currentLang];
+        
+        // If language changed, restart typing
+        if (currentText !== fullText) {
+            currentText = fullText;
+            charIndex = 0;
+            isDeleting = false;
+        }
+        
+        if (!isDeleting) {
+            // Typing forward
+            subtitleEl.textContent = currentText.substring(0, charIndex);
+            charIndex++;
+            
+            if (charIndex > currentText.length) {
+                // Finished typing, wait then restart
+                setTimeout(() => {
+                    isDeleting = true;
+                    type();
+                }, 3000); // Wait 3s before deleting
+                return;
+            }
+        } else {
+            // Deleting
+            subtitleEl.textContent = currentText.substring(0, charIndex);
+            charIndex--;
+            
+            if (charIndex === 0) {
+                isDeleting = false;
+                // Check if language changed while deleting
+                currentText = texts[currentLang];
+            }
+        }
+        
+        const typingSpeed = isDeleting ? 50 : 100;
+        setTimeout(type, typingSpeed);
+    }
+    
+    // Start typing animation
+    setTimeout(type, 500);
+}
+
+// Initialize typing animation on page load
+document.addEventListener('DOMContentLoaded', initTypingAnimation);

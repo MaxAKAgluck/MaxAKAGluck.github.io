@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -56,7 +56,7 @@
             <div class="hero-text">
                 <span class="greeting" data-en="Hello, I am" data-de="Hallo, ich bin">Hello, I am</span>
                 <h1>Maksim</h1> 
-                <h2 class="subtitle" data-en="Aspiring Cybersecurity Analyst" data-de="Angehender Cybersecurity Analyst">Aspiring Cybersecurity Analyst</h2> 
+                <h2 class="subtitle typing" data-en="Aspiring Cybersecurity Analyst" data-de="Angehender Cybersecurity Analyst">Aspiring Cybersecurity Analyst</h2> 
                 <p data-en="Passionate about Blue Team security and networking. Currently honing my skills through CTFs, home labs, and continuous learning." data-de="Begeistert von Blue Team Security und Netzwerksicherheit. Verfeinere derzeit meine Fähigkeiten durch CTFs, Home Labs und kontinuierliches Lernen.">
                     Passionate about Blue Team security and networking. Currently honing my skills through CTFs, home labs, and continuous learning.
                 </p>
@@ -66,7 +66,11 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/Photo_icon.png" alt="Profile Photo">
+                <div class="hero-image-wrapper">
+                    <img src="assets/Photo_icon.png" alt="Profile Photo">
+                    <!-- Floating Badge -->
+                    <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=503286" width="330" height="85" title="TryHackMe Badge" class="hero-badge-iframe"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -252,22 +256,23 @@
                             <span data-en="Log analysis" data-de="Log-Analyse">Log analysis</span>
                             <span data-en="Query Language" data-de="Query-Sprache">Query Language</span>
                         </div>
-                        <a href="https://github.com/MaxAKAgluck/BOTSv1_Lab" class="btn btn-outline btn-sm" data-en="View Report" data-de="Bericht ansehen">View Report</a>
+                        <a href="https://github.com/MaxAKAgluck/BOTSv1_Lab" class="btn btn-outline btn-sm" data-en="View Writeup" data-de="Writeup ansehen">View Writeup</a>
                     </div>
                 </div>
                  <!-- Project 3 -->
                 <div class="project-card">
                      <div class="project-image">
-                         <img src="https://placehold.co/600x400/e0e0e0/808080?text=Project+Image" alt="Project 3">
+                         <img src="assets/APIWizards_Writeup.png" alt="Project 3">
                     </div>
                     <div class="project-content">
-                        <h3 data-en="Vulnerable Web App Lab" data-de="Verwundbare Web-App Lab">Vulnerable Web App Lab</h3>
-                        <p data-en="Set up a local environment with DVWA to practice SQL Injection and XSS attacks." data-de="Lokale Umgebung mit DVWA eingerichtet, um SQL Injection und XSS-Angriffe zu üben.">Set up a local environment with DVWA to practice SQL Injection and XSS attacks.</p>
+                        <h3 data-en="APIWizards Room Writeup" data-de="APIWizards Raum Writeup">APIWizards Room Writeup</h3>
+                        <p data-en="Investigated a security breach on a Linux machine: users, source code, logs, attack timeline" data-de="Lokale Umgebung mit DVWA eingerichtet, um SQL Injection und XSS-Angriffe zu üben.">Investigated a security breach on a Linux machine: users, source code, logs, attack timeline.</p>
                         <div class="project-tags">
-                            <span>Docker</span>
+                            <span>Linux</span>
                             <span data-en="Web Security" data-de="Web-Sicherheit">Web Security</span>
+                            <span data-en="Post-compromise investigation" data-de="Web-Sicherheit">Post-compromise investigation</span>
                         </div>
-                         <a href="#" class="btn btn-outline btn-sm" data-en="View Setup" data-de="Setup ansehen">View Setup</a>
+                         <a href="#" class="btn btn-outline btn-sm" data-en="View writeup" data-de="Writeup ansehen">View Writeup</a>
                     </div>
                 </div>
             </div>
@@ -313,8 +318,15 @@
                     <div class="cert-icon"><img src="assets/TryHackMe_SOC_L1.png" alt="Cert 4"></div>
                     <h3 data-en="SOC Level 1" data-de="SOC Level 1">SOC Level 1</h3>
                     <span class="issuer">TryHackMe</span>
-                    <p data-en="Fundamental knowledge of cybersecurity operations." data-de="Grundlegendes Wissen über Cybersecurity-Operationen.">Fundamental knowledge of cybersecurity operations.</p>
+                    <p data-en="Fundamental knowledge of SOC operations - SOC tools, Network and Web attacks, Endpoint monitoring, SIEM usage." data-de="Grundlegendes Wissen über SOC-Operationen - SOC-Tools, Netzwerk- und Web-Angriffe, Endpoint-Monitoring, SIEM-Nutzung.">Fundamental knowledge of SOC operations - SOC tools, Network and Web attacks, Endpoint monitoring, SIEM usage.</p>
                     <a href="https://tryhackme.com/certificate/THM-Q73RW7IBGM" target="_blank" rel="noopener noreferrer" class="cert-link" data-en="View Credential" data-de="Zertifikat ansehen">View Credential</a>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><img src="assets/BTJA.png" alt="Cert 5"></div>
+                    <h3 data-en="Blue Team Junior Analyst Pathway" data-de="Blue Team Junior Analyst Pathway">Blue Team Junior Analyst Pathway</h3>
+                    <span class="issuer">Blue Team Security</span>
+                    <p data-en="Knowledge and practical ability across the following areas of security: Open-Source Intelligence, Digital Forensics, Vulnerability Management, DarkWeb Operations, Threat Hunting, and Network Analysis." data-de="Grundlegendes Wissen über SOC-Operationen - SOC-Tools, Netzwerk- und Web-Angriffe, Endpoint-Monitoring, SIEM-Nutzung.">Knowledge and practical ability across the following areas of security: Open-Source Intelligence, Digital Forensics, Vulnerability Management, DarkWeb Operations, Threat Hunting, and Network Analysis</p>
+                    <a href="https://elearning.securityblue.team/home/certificate/618772696" target="_blank" rel="noopener noreferrer" class="cert-link" data-en="View Credential" data-de="Zertifikat ansehen">View Credential</a>
                 </div>
             </div>
         </div>
@@ -359,8 +371,8 @@
                     <div class="terminal-body" id="terminal-body">
                         <div class="terminal-output" id="terminal-output">
                             <p data-en="Welcome to CyberTerminal v1.0" data-de="Willkommen zu CyberTerminal v1.0">Welcome to CyberTerminal v1.0</p>
-                            <p data-en="Type <span style='color: #00aaff;'>'help'</span> to see available commands." data-de="Tippe <span style='color: #00aaff;'>'help'</span>, um verfügbare Befehle zu sehen.">Type <span style="color: #00aaff;">'help'</span> to see available commands.</p>
-                            <p data-en="Try <span style='color: #00aaff;'>'theme dark'</span> to join the dark side." data-de="Versuche <span style='color: #00aaff;'>'theme dark'</span>, um zur dunklen Seite zu wechseln.">Try <span style="color: #00aaff;">'theme dark'</span> to join the dark side.</p>
+                            <p><span data-en="Type " data-de="Tippe ">Type </span><span style="color: #00aaff;">'help'</span><span data-en=" to see available commands." data-de=" um verfügbare Befehle zu sehen."> to see available commands.</span></p>
+                            <p><span data-en="Try " data-de="Versuche ">Try </span><span style="color: #00aaff;">'theme dark'</span><span data-en=" to join the dark side." data-de=" um zur dunklen Seite zu wechseln."> to join the dark side.</span></p>
                         </div>
                     </div>
                     <div class="terminal-input-area" style="padding: 0 20px 20px;">

@@ -901,11 +901,12 @@ body.dark-theme .progress-bar {
 }
 
 .project-image img {
-    width: 100%;
+    width: auto;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
-
 .project-content {
     padding: 20px;
 }
@@ -1394,4 +1395,5 @@ footer {
     .social-icon-large {
         min-width: 100%;
     }
+
 }

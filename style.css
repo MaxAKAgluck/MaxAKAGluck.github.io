@@ -199,6 +199,101 @@ body.dark-theme {
     --shadow-purple: 0 10px 30px rgba(167, 139, 250, 0.3);
 }
 
+/* Matrix/Hacker Theme (Fun Zone Terminal) */
+body.matrix-theme {
+    /* Matrix green color scheme */
+    --primary-color: #00ff41;
+    --secondary-color: #00cc33;
+    --accent-cyan: #00ff41;
+    --accent-purple: #00ff41;
+    --accent-green: #00ff41;
+    --gradient-primary: linear-gradient(135deg, #003b00 0%, #00ff41 100%);
+    --gradient-cyber: linear-gradient(135deg, #001a00 0%, #00ff41 100%);
+    --gradient-success: linear-gradient(135deg, #00ff41 0%, #00cc33 100%);
+    
+    --bg-body: #0d0208;
+    --bg-light: #001a00;
+    --bg-gradient-hero: linear-gradient(135deg, #001a00 0%, #003b00 100%);
+    
+    --text-dark: #00ff41;
+    --text-light: #00cc33;
+    --white: #001a00;
+    --shadow: 0 5px 15px rgba(0, 255, 65, 0.3);
+    --shadow-lg: 0 10px 40px rgba(0, 255, 65, 0.4);
+    --shadow-cyan: 0 10px 30px rgba(0, 255, 65, 0.5);
+    --shadow-purple: 0 10px 30px rgba(0, 255, 65, 0.4);
+    
+    /* Matrix rain effect background */
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 65, 0.03) 2px,
+            rgba(0, 255, 65, 0.03) 4px
+        );
+    background-size: 100% 4px;
+    animation: matrix-scan 20s linear infinite;
+}
+
+@keyframes matrix-scan {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100px;
+    }
+}
+
+/* Matrix theme specific adjustments */
+body.matrix-theme .navbar {
+    background: rgba(0, 26, 0, 0.95);
+    border-bottom: 1px solid #00ff41;
+    box-shadow: 0 2px 10px rgba(0, 255, 65, 0.3);
+}
+
+body.matrix-theme .btn-primary {
+    background: linear-gradient(135deg, #003b00 0%, #00ff41 100%);
+    color: #000;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}
+
+body.matrix-theme .btn-outline {
+    border-color: #00ff41;
+    color: #00ff41;
+}
+
+body.matrix-theme .btn-outline:hover {
+    background: #00ff41;
+    color: #000;
+}
+
+body.matrix-theme .project-card,
+body.matrix-theme .cert-card,
+body.matrix-theme .skill-card,
+body.matrix-theme .timeline-item {
+    background: rgba(0, 26, 0, 0.8);
+    border: 1px solid #00ff41;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+}
+
+body.matrix-theme .section-title::after {
+    background: linear-gradient(90deg, #00ff41 0%, #00cc33 100%);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+}
+
+body.matrix-theme .terminal-container {
+    border: 2px solid #00ff41;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+}
+
+body.matrix-theme .stats-section {
+    background: linear-gradient(135deg, #001a00 0%, #003b00 100%);
+    border-top: 2px solid #00ff41;
+    border-bottom: 2px solid #00ff41;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -433,6 +528,15 @@ img {
     color: var(--primary-color);
 }
 
+/* Header Controls (Theme + Language) */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 20px;
+}
+
+.theme-toggle,
 .lang-toggle {
     background: none;
     border: 2px solid var(--primary-color);
@@ -446,20 +550,32 @@ img {
     align-items: center;
     gap: 8px;
     transition: all 0.3s;
-    margin-left: 20px;
 }
 
+.theme-toggle {
+    padding: 8px 12px;
+}
+
+.theme-toggle:hover,
 .lang-toggle:hover {
     background-color: var(--primary-color);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 103, 214, 0.3);
 }
 
+.theme-toggle i,
 .lang-toggle i {
     font-size: 1rem;
 }
 
 .lang-text {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-heading);
+}
+
+/* Dark theme active state */
+body.dark-theme .theme-toggle i::before {
+    content: "\f185"; /* fa-sun */
 }
 
 .hamburger {
@@ -620,9 +736,7 @@ img {
     height: 350px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid transparent;
-    background: var(--gradient-cyber);
-    padding: 5px;
+    border: 4px solid var(--primary-color);
     box-shadow: var(--shadow-lg);
     transition: all 0.4s ease;
     position: relative;
@@ -632,6 +746,7 @@ img {
 .hero-image img:hover {
     transform: scale(1.05) rotate(2deg);
     box-shadow: var(--shadow-cyan);
+    border-color: var(--accent-cyan);
 }
 
 /* TryHackMe Badge iframe */
@@ -863,6 +978,69 @@ body.dark-theme .progress-bar {
 }
 
 /* Projects Section */
+/* Project Filter Buttons */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 28px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 30px;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    transition: all 0.4s ease;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.filter-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.filter-btn:hover {
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-purple);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-purple);
+}
+
+.filter-btn.active::before {
+    width: 300px;
+    height: 300px;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -877,6 +1055,31 @@ body.dark-theme .progress-bar {
     transition: all 0.4s ease;
     border: 1px solid rgba(52, 152, 219, 0.1);
     position: relative;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Filter animation states */
+.project-card.hide {
+    display: none;
+}
+
+.project-card.show {
+    display: block;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .project-card::before {
@@ -901,13 +1104,17 @@ body.dark-theme .progress-bar {
 }
 
 .project-image img {
-    width: 100%;
+    width: auto;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
-
 .project-content {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-content h3 {
@@ -915,11 +1122,21 @@ body.dark-theme .progress-bar {
     font-size: 1.2rem;
 }
 
+.project-content p {
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
 .project-tags {
-    margin: 15px 0;
+    margin: 0 0 15px 0;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+}
+
+.project-content .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .project-tags span {
@@ -1333,10 +1550,19 @@ footer {
         margin: 15px 0;
     }
 
-    .lang-toggle {
+    .header-controls {
         margin-left: 0;
-        padding: 6px 12px;
+        gap: 8px;
+    }
+    
+    .theme-toggle,
+    .lang-toggle {
+        padding: 6px 10px;
         font-size: 0.85rem;
+    }
+    
+    .theme-toggle {
+        padding: 6px 8px;
     }
 
     .hamburger {
@@ -1377,6 +1603,16 @@ footer {
     .section-title {
         font-size: 2rem;
     }
+    
+    .project-filters {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .filter-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
 
     .options-grid {
         grid-template-columns: 1fr;
@@ -1394,4 +1630,5 @@ footer {
     .social-icon-large {
         min-width: 100%;
     }
+
 }

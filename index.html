@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberportfolio</title>
+    <title>My Cyberportfolio</title>
     <meta name="description" content="Aspiring Cybersecurity Analyst Portfolio">
     
     <!-- Google Fonts -->
@@ -40,10 +40,15 @@
                     <li><a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a></li>
                 </ul>
             </nav>
-            <button class="lang-toggle" id="lang-toggle" title="Switch language / Sprache wechseln">
-                <i class="fas fa-globe"></i>
-                <span class="lang-text">DE</span>
-            </button>
+            <div class="header-controls">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode / Dunkelmodus umschalten">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="lang-toggle" id="lang-toggle" title="Switch language / Sprache wechseln">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-text">DE</span>
+                </button>
+            </div>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -226,9 +231,17 @@
             <h2 class="section-title" data-en="Projects" data-de="Projekte">Projects</h2>
             <p class="section-subtitle" data-en="Hands-on projects demonstrating practical skills." data-de="Praxisnahe Projekte, die praktische Fähigkeiten demonstrieren.">Hands-on projects demonstrating practical skills.</p>
             
+            <!-- Project Filter Buttons -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-en="All Projects" data-de="Alle Projekte">All Projects</button>
+                <button class="filter-btn" data-filter="coding" data-en="Coding Projects" data-de="Code-Projekte">Coding Projects</button>
+                <button class="filter-btn" data-filter="writeup" data-en="Writeups" data-de="Writeups">Writeups</button>
+                <button class="filter-btn" data-filter="other" data-en="Other" data-de="Andere">Other</button>
+            </div>
+            
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card" data-category="coding">
                     <div class="project-image">
                          <img src="assets/bt-quickcheck.png" alt="Project 1">
                     </div>
@@ -244,7 +257,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card" data-category="writeup">
                      <div class="project-image">
                          <img src="assets/BOTSv1.png" alt="Project 2">
                     </div>
@@ -260,35 +273,51 @@
                     </div>
                 </div>
                  <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card" data-category="writeup">
                      <div class="project-image">
                          <img src="assets/APIWizards_Writeup.png" alt="Project 3">
                     </div>
                     <div class="project-content">
                         <h3 data-en="APIWizards Room Writeup" data-de="APIWizards Raum Writeup">APIWizards Room Writeup</h3>
-                        <p data-en="Investigated a security breach on a Linux machine: users, source code, logs, attack timeline" data-de="Lokale Umgebung mit DVWA eingerichtet, um SQL Injection und XSS-Angriffe zu üben.">Investigated a security breach on a Linux machine: users, source code, logs, attack timeline.</p>
+                        <p data-en="Investigated a security breach on a Linux machine: users, source code, logs, attack timeline" data-de="Untersuchte einen Sicherheitsverstoß auf einer Linux-Maschine: Benutzer, Quellcode, Logs, Angriffszeitlinie">Investigated a security breach on a Linux machine: users, source code, logs, attack timeline.</p>
                         <div class="project-tags">
                             <span>Linux</span>
                             <span data-en="Web Security" data-de="Web-Sicherheit">Web Security</span>
-                            <span data-en="Post-compromise investigation" data-de="Web-Sicherheit">Post-compromise investigation</span>
+                            <span data-en="Post-compromise investigation" data-de="Post-Kompromittierungs-Untersuchung">Post-compromise investigation</span>
                         </div>
-                         <a href="https://github.com/MaxAKAgluck/APIWizards-Writeup" class="btn btn-outline btn-sm" data-en="View writeup" data-de="Writeup ansehen">View Writeup</a>
+                         <a href="https://github.com/MaxAKAgluck/APIWizards-Writeup" class="btn btn-outline btn-sm" data-en="View Writeup" data-de="Writeup ansehen">View Writeup</a>
                     </div>
                 </div>
                  <!-- Project 4 -->
-                <div class="project-card">
+                <div class="project-card" data-category="writeup">
                     <div class="project-image">
                         <img src="assets/Autopsy_room.png" alt="Project 4">
                    </div>
                    <div class="project-content">
                        <h3 data-en="Disk Analysis & Autopsy Room Writeup" data-de="Disk Analysis & Autopsy Raum Writeup">Disk Analysis & Autopsy room Writeup</h3>
-                       <p data-en="Performed a manual analysis of the artifacts discovered by Autopsy." data-de="">Performed a manual analysis of the artifacts discovered by Autopsy.</p>
+                       <p data-en="Performed a manual analysis of the artifacts discovered by Autopsy." data-de="Führte eine manuelle Analyse der von Autopsy entdeckten Artefakte durch.">Performed a manual analysis of the artifacts discovered by Autopsy.</p>
                        <div class="project-tags">
                            <span>Windows</span>
                            <span>Windows logs</span>
                            <span>Disk analysis</span>
                        </div>
-                        <a href="https://github.com/MaxAKAgluck/Disk-Analysis-Autopsy-Writeup/" class="btn btn-outline btn-sm" data-en="View writeup" data-de="Writeup ansehen">View Writeup</a>
+                        <a href="https://github.com/MaxAKAgluck/Disk-Analysis-Autopsy-Writeup/" class="btn btn-outline btn-sm" data-en="View Writeup" data-de="Writeup ansehen">View Writeup</a>
+                   </div>
+               </div>
+                <!-- Project 5 -->
+                <div class="project-card" data-category="writeup">
+                    <div class="project-image">
+                        <img src="assets/Directory_Writeup.png" alt="Project 5">
+                   </div>
+                   <div class="project-content">
+                       <h3 data-en="Directory Room Writeup" data-de="Directory Raum Writeup">Directory Room Writeup</h3>
+                       <p data-en="Investigated a pcap file that captured attacker's movements." data-de="Untersuchte eine pcap-Datei, die die Bewegungen des Angreifers erfasste.">Investigated a pcap file that captured attacker's movements.</p>
+                       <div class="project-tags">
+                           <span>Wireshark</span>
+                           <span>Windows auth protocols</span>
+                           <span>Hash decryption</span>
+                       </div>
+                        <a href="https://github.com/MaxAKAgluck/Directory-Room-Writeup" class="btn btn-outline btn-sm" data-en="View Writeup" data-de="Writeup ansehen">View Writeup</a>
                    </div>
                </div>
             </div>
@@ -341,7 +370,7 @@
                     <div class="cert-icon"><img src="assets/BTJA.png" alt="Cert 5"></div>
                     <h3 data-en="Blue Team Junior Analyst Pathway" data-de="Blue Team Junior Analyst Pathway">Blue Team Junior Analyst Pathway</h3>
                     <span class="issuer">Blue Team Security</span>
-                    <p data-en="Knowledge and practical ability across the following areas of security: Open-Source Intelligence, Digital Forensics, Vulnerability Management, DarkWeb Operations, Threat Hunting, and Network Analysis." data-de="Grundlegendes Wissen über SOC-Operationen - SOC-Tools, Netzwerk- und Web-Angriffe, Endpoint-Monitoring, SIEM-Nutzung.">Knowledge and practical ability across the following areas of security: Open-Source Intelligence, Digital Forensics, Vulnerability Management, DarkWeb Operations, Threat Hunting, and Network Analysis</p>
+                    <p data-en="Knowledge and practical ability across the following areas of security: Open-Source Intelligence, Digital Forensics, Vulnerability Management, DarkWeb Operations, Threat Hunting, and Network Analysis." data-de="Wissen und praktische Fähigkeiten in folgenden Sicherheitsbereichen: Open-Source Intelligence, Digitale Forensik, Schwachstellenmanagement, DarkWeb-Operationen, Threat Hunting und Netzwerkanalyse.">Knowledge and practical ability across the following areas of security: Open-Source Intelligence, Digital Forensics, Vulnerability Management, DarkWeb Operations, Threat Hunting, and Network Analysis.</p>
                     <a href="https://elearning.securityblue.team/home/certificate/618772696" target="_blank" rel="noopener noreferrer" class="cert-link" data-en="View Credential" data-de="Zertifikat ansehen">View Credential</a>
                 </div>
             </div>
@@ -388,7 +417,7 @@
                         <div class="terminal-output" id="terminal-output">
                             <p data-en="Welcome to CyberTerminal v1.0" data-de="Willkommen zu CyberTerminal v1.0">Welcome to CyberTerminal v1.0</p>
                             <p><span data-en="Type " data-de="Tippe ">Type </span><span style="color: #00aaff;">'help'</span><span data-en=" to see available commands." data-de=" um verfügbare Befehle zu sehen."> to see available commands.</span></p>
-                            <p><span data-en="Try " data-de="Versuche ">Try </span><span style="color: #00aaff;">'theme dark'</span><span data-en=" to join the dark side." data-de=" um zur dunklen Seite zu wechseln."> to join the dark side.</span></p>
+                            <p><span data-en="Try " data-de="Versuche ">Try </span><span style="color: #00aaff;">'theme matrix'</span><span data-en=" to enter the Matrix." data-de=" um die Matrix zu betreten."> to enter the Matrix.</span></p>
                         </div>
                     </div>
                     <div class="terminal-input-area" style="padding: 0 20px 20px;">

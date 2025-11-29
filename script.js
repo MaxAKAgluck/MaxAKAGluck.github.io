@@ -3,6 +3,30 @@
 // ========================================
 let currentLang = 'en'; // Default language
 
+// ========================================
+// Theme Toggle (Header Button)
+// ========================================
+const themeToggleBtn = document.getElementById('theme-toggle');
+
+if (themeToggleBtn) {
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
+    
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        
+        // Save preference
+        if (document.body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
+
 // Mobile Navigation Toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
@@ -310,28 +334,33 @@ const commands = {
         desc: "Show available commands",
         action: () => {
             return `Available commands:
-  <span style="color: #00aaff;">help</span>        - Show this menu
-  <span style="color: #00aaff;">theme dark</span>  - Enable dark mode (Hacker style)
-  <span style="color: #00aaff;">theme light</span> - Enable light mode
-  <span style="color: #00aaff;">whoami</span>      - Print current user info
-  <span style="color: #00aaff;">ascii</span>       - Show random ASCII art
-  <span style="color: #00aaff;">links</span>       - Get a random CyberSec resource
-  <span style="color: #00aaff;">poweroff</span>    - Shutdown the system
-  <span style="color: #00aaff;">clear</span>       - Clear terminal screen`;
+  <span style="color: #00aaff;">help</span>          - Show this menu
+  <span style="color: #00aaff;">theme matrix</span>  - Enter the Matrix 🟢
+  <span style="color: #00aaff;">theme light</span>   - Exit the Matrix
+  <span style="color: #00aaff;">whoami</span>        - Print current user info
+  <span style="color: #00aaff;">ascii</span>         - Show random ASCII art
+  <span style="color: #00aaff;">links</span>         - Get a random CyberSec resource
+  <span style="color: #00aaff;">poweroff</span>      - Shutdown the system
+  <span style="color: #00aaff;">clear</span>         - Clear terminal screen`;
         }
     },
     theme: {
-        desc: "Change website theme (dark/light)",
+        desc: "Change website theme (matrix/light)",
         action: (args) => {
             const mode = args[0];
-            if (mode === 'dark') {
-                document.body.classList.add('dark-theme');
-                return "Dark mode enabled. Welcome to the matrix.";
+            if (mode === 'matrix' || mode === 'dark') {
+                document.body.classList.remove('dark-theme');
+                document.body.classList.add('matrix-theme');
+                return `<span style="color: #00ff41;">█▓▒░ MATRIX MODE ACTIVATED ░▒▓█</span>
+<span style="color: #00ff41;">Wake up, Neo...</span>
+<span style="color: #00cc33;">The Matrix has you...</span>
+<span style="color: #00ff41;">Follow the white rabbit.</span>`;
             } else if (mode === 'light') {
                 document.body.classList.remove('dark-theme');
-                return "Light mode enabled.";
+                document.body.classList.remove('matrix-theme');
+                return "Light mode enabled. Back to reality.";
             } else {
-                return "Usage: theme [dark|light]";
+                return "Usage: theme [matrix|light]";
             }
         }
     },
@@ -384,7 +413,7 @@ const commands = {
 "  | |____| | | (_| | (__|   <\n" +
 "   \\_____|_|  \\__,_|\\___|_|\\_\\",
 
-"        .==.        .==.\n" +
+"        .==.          .==.\n" +
 "       //..\\\\      //..\\\\      \n" +
 "      // ..\\ \\    // ..\\ \\\n" +
 "     //  .  \\ \\  //  .  \\ \\\n" +
@@ -555,6 +584,18 @@ function updateLanguage() {
         }
     }
     
+    // Update filter buttons text
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+        const enText = btn.getAttribute('data-en');
+        const deText = btn.getAttribute('data-de');
+        if (currentLang === 'de' && deText) {
+            btn.textContent = deText;
+        } else if (enText) {
+            btn.textContent = enText;
+        }
+    });
+    
     // Update HTML lang attribute
     document.documentElement.lang = currentLang;
 }
@@ -621,3 +662,38 @@ function initTypingAnimation() {
 
 // Initialize typing animation on page load
 document.addEventListener('DOMContentLoaded', initTypingAnimation);
+
+// ========================================
+// Project Filter Functionality
+// ========================================
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+if (filterButtons.length > 0 && projectCards.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.getAttribute('data-filter');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter projects with animation
+            projectCards.forEach((card, index) => {
+                const category = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    // Show card with staggered animation
+                    card.classList.remove('hide');
+                    card.classList.add('show');
+                    card.style.animationDelay = `${index * 0.1}s`;
+                } else {
+                    // Hide card
+                    card.classList.add('hide');
+                    card.classList.remove('show');
+                }
+            });
+        });
+    });
+}

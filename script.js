@@ -3,6 +3,29 @@
 // ========================================
 let currentLang = 'en'; // Default language
 
+// Open contact destinations only after a visitor clicks; this discourages passive scraping.
+const linkedinProfile = document.getElementById('linkedin-profile');
+if (linkedinProfile) {
+    linkedinProfile.addEventListener('click', () => {
+        const profileUrl = [
+            'https://www.linkedin.com/in/',
+            'maksim', '-', 'poksevatkin', '-/'
+        ].join('');
+        window.open(profileUrl, '_blank', 'noopener,noreferrer');
+    });
+}
+
+const emailContact = document.getElementById('email-contact');
+if (emailContact) {
+    emailContact.addEventListener('click', () => {
+        const emailAddress = [
+            ['m', 'poksevatkin'].join('.'),
+            ['gmail', 'com'].join('.')
+        ].join('@');
+        window.location.href = `mailto:${emailAddress}`;
+    });
+}
+
 // ========================================
 // Theme Toggle (Header Button)
 // ========================================

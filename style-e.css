@@ -1149,6 +1149,13 @@ body.dark-theme .stats-section {
     transition: all var(--transition-base);
 }
 
+button.social-icon-large {
+    appearance: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
 .social-icon-large i {
     font-size: 2.2rem;
     color: var(--accent);
